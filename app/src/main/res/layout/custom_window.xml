@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:id="@+id/cst"
+    app:cardCornerRadius="20dp"
+    android:elevation="5dp"
+    app:cardBackgroundColor="#2196F3"
+    android:layout_height="200dp">
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/closeBtn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="7dp"
+        android:layout_gravity="end"
+        android:background="@drawable/rounded_shape"
+        android:src="@drawable/ic_baseline_close_24"
+        android:translationZ="90dp" />
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/closeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="220dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintBottom_toBottomOf="@+id/desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/desc"
+            app:layout_constraintTop_toTopOf="@+id/desc" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
