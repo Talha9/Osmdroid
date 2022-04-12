@@ -6,6 +6,54 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:translationZ="90dp"
+        android:background="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/headingdImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:translationZ="90dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/desTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/speedTxt"
+            app:layout_constraintStart_toEndOf="@+id/headingdImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/speedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="---"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:translationZ="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/mapOnline1"
@@ -28,11 +76,11 @@
         app:layout_constraintStart_toEndOf="@+id/mapOnline1" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/mapOnline3"
+        android:id="@+id/search"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_margin="20dp"
-        android:text="Here"
+        android:text="Navigate"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mapOnline2" />
