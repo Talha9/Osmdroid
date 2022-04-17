@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="direction_icons">
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_continue</item>
+        <item>@drawable/ic_continue</item>
+        <item>@drawable/ic_slight_left</item>
+        <item>@drawable/ic_turn_left</item>
+        <item>@drawable/ic_sharp_left</item>
+        <item>@drawable/ic_slight_right</item>
+        <item>@drawable/ic_turn_right</item>
+        <item>@drawable/ic_sharp_right</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_continue</item>
+        <item>@drawable/ic_u_turn</item>
+        <item>@drawable/ic_u_turn</item>
+        <item>@drawable/ic_u_turn</item>
+        <item>@drawable/ic_slight_left</item>
+        <item>@drawable/ic_slight_right</item>
+        <item>@drawable/ic_slight_left</item>
+        <item>@drawable/ic_slight_right</item>
+        <item>@drawable/ic_continue</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_arrived</item>
+        <item>@drawable/ic_arrived</item>
+        <item>@drawable/ic_arrived</item>
+        <item>@drawable/ic_roundabout</item>
+        <item>@drawable/ic_roundabout</item>
+        <item>@drawable/ic_roundabout</item>
+        <item>@drawable/ic_roundabout</item>
+        <item>@drawable/ic_roundabout</item>
+        <item>@drawable/ic_roundabout</item>
+        <item>@drawable/ic_roundabout</item>
+        <item>@drawable/ic_roundabout</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_empty</item>
+        <item>@drawable/ic_empty</item>
+    </array>
+</resources>
