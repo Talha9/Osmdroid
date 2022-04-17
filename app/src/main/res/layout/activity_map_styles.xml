@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapStyles">
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mapBoxMap"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="MapBox"
+        android:textAllCaps="false"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/imageRysetAerialBeingMap"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:text="Being IMAGERYSET_AERIAL"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/mapBoxMap"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/imageRysetRoadBeingMap"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:text="Being IMAGERYSET_ROAD"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/imageRysetAerialBeingMap"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/satelliteMap"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:text="USSG Satellite"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/imageRysetRoadBeingMap"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mapnikMap"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:text="Mapnik"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/satelliteMap"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/publicTransportMap"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:text="Public Transport"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/mapnikMap"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/openTopoMap"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:text="Open Topo"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/publicTransportMap"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/defaultMap"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:text="Default"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/openTopoMap"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

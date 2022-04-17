@@ -53,37 +53,16 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/mapOnline1"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="MapBox"
-        android:textAllCaps="false"
-        android:layout_margin="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/mapOnline2"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:text="Being"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mapOnline1" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/search"
+        android:id="@+id/navigateBtn"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_margin="20dp"
         android:text="Navigate"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mapOnline2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <org.osmdroid.views.MapView

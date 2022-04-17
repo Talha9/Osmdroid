@@ -21,6 +21,11 @@ import androidx.core.app.NotificationCompat;
 public class TrackingService extends Service {
     public static final String CHANNEL_ID = "ForegroundServiceChannel";
     public static Handler handler;
+    private Notification notification;
+    PendingIntent pStopSelf;
+    public String ACTION_STOP_SERVICE = "STOP";
+    private Intent intent;
+
 
     @Nullable
     @Override
@@ -30,19 +35,17 @@ public class TrackingService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
-        String input = intent.getStringExtra("inputExtra");
-        createNotificationChannel();
-        Intent notificationIntent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this,
-                0, notificationIntent, 0);
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("Foreground Service")
-                .setContentText(input)
-                .setSmallIcon(R.drawable.twotone_navigation_black_48)
-                .setContentIntent(pendingIntent)
-                .build();
-        startForeground(1, notification);
+        if(intent!=null){
+                if (ACTION_STOP_SERVICE.equals(intent.getAction())) {
+                    try {
+                        handler.removeCallbacks(timerRunnable);
+                        stopSelf();
+                        Log.d("ACTION_STOP_SERVICE", "::: Stop Service");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+        }
 
         return START_STICKY;
     }
@@ -50,6 +53,24 @@ public class TrackingService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        createNotificationChannel();
+        Intent stopSelf = new Intent(this, MainActivity.class);
+        stopSelf.setAction(ACTION_STOP_SERVICE);
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.S){
+            pStopSelf =   PendingIntent.getService(this, 0, stopSelf, PendingIntent.FLAG_IMMUTABLE);
+        }else{
+            pStopSelf =    PendingIntent.getService(this, 0, stopSelf, PendingIntent.FLAG_CANCEL_CURRENT);
+        }
+
+        notification = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle("Navigation")
+                .setSmallIcon(R.drawable.twotone_navigation_black_48)
+                .setContentIntent(pStopSelf)
+                .build();
+        startForeground(1, notification);
+
         handler = new Handler();
         if (handler!=null) {
             try {
@@ -80,9 +101,10 @@ public class TrackingService extends Service {
         checkRouteHeadings();
     }
 
+
     private void checkRouteHeadings() {
         try {
-            Intent intent = new Intent();
+           intent = new Intent();
             intent.setAction("SendMessage");
             intent.putExtra("checkValue", true);
             intent.setFlags(Intent.FLAG_RECEIVER_FOREGROUND);

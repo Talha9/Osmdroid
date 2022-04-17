@@ -2,29 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.icon.osmdroid">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"  />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:largeHeap="true"
-        android:theme="@style/Theme.Osmdroid">
+        android:theme="@style/Theme.Osmdroid"
+        android:usesCleartextTraffic="true">
 
-        <meta-data android:name="MAPBOX_MAPID" android:value="satellite-streets-v11"/>
-        <meta-data android:name="MAPBOX_ACCESS_TOKEN" android:value="pk.eyJ1IjoibWtlciIsImEiOiJjaWh0bGtyZDIwMDM4dzFrcDlmOTFlbm8zIn0.gHt6BSiGpb19TqUEjD8bxw"/>
+        <activity android:name=".MapNearBy"
+            android:exported="true"/>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".MapStyles"
+            android:exported="true" />
+        <activity
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,12 +36,22 @@
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="MAPBOX_MAPID"
+            android:value="satellite-streets-v11" />
+        <meta-data
+            android:name="MAPBOX_ACCESS_TOKEN"
+            android:value="pk.eyJ1IjoibWtlciIsImEiOiJjaWh0bGtyZDIwMDM4dzFrcDlmOTFlbm8zIn0.gHt6BSiGpb19TqUEjD8bxw" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
+
         <service
             android:name=".TrackingService"
             android:enabled="true"
             android:exported="true"
             android:stopWithTask="false" />
-
     </application>
 
 </manifest>
